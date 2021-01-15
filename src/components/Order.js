@@ -7,18 +7,18 @@ class Order extends Component {
   };
 
   handleClick = () => {
-    this.setState((prevState) => {
+    this.setState( prevState => {
       return {
-        isClicked: !prevState.isClicked,
-      };
-    });
-  };
+        isClicked: !prevState.isClicked
+      }
+    })
+  }
 
   render() {
     return (
       <div className="ui centered raised card">
         <div className="image">
-          <img src={require("../images/burrito-bowl.jpg")} alt="burrito bowl" />
+          <img src={ require("../images/burrito-bowl.jpg") } alt="burrito bowl" />
         </div>
         <div className="content">
           <b>Protein:</b>
@@ -41,16 +41,14 @@ class Order extends Component {
           <br />
         </div>
         <div className="extra content">
-          {this.props.sides.length > 0 ? (
-            <button className="ui button small" onClick={this.handleClick}>
-              View Sides
-            </button>
-          ) : (
-            <p>No sides</p>
-          )}
-
-          {/* this is just a shortcut to writing this.state.isClicked ? <Side sides={this.props.sides} /> : null */}
-          {this.state.isClicked && <Side sides={this.props.sides} />}
+          { this.props.sides.length > 0 ?
+              <button className="ui button small" onClick={ this.handleClick }>
+                View Sides
+              </button>
+            :
+              <p>No sides</p>
+          }
+          { this.state.isClicked && <Side sides={ this.props.sides } /> }
         </div>
       </div>
     );

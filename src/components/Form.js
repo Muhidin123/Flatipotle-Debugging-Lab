@@ -16,10 +16,15 @@ class Form extends Component {
     ...DEFAULT_STATE,
   };
 
-  handleSubmit(e) {
-    e.preventDefault();
-    document.getElementById("order-form").reset();
-    this.props.addOrder(this.state);
+  // handleSubmit(e) {
+  //   e.preventDefault();
+  //   document.getElementById("order-form").reset();
+  //   this.props.addOrder(this.state);
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+    document.getElementById("order-form").reset()
+    this.props.addOrder(this.state)
 
     this.setState({
       ...DEFAULT_STATE,
@@ -45,23 +50,23 @@ class Form extends Component {
         <h1 className="ui block header">Order Form</h1>
         <form className="ui form" id="order-form" onSubmit={this.handleSubmit}>
           <ProteinForm
-            protein={this.state.protein}
-            handleOnChange={this.handleChange}
+            protein={ this.state.protein }
+            handleChange={ this.handleChange }
           />
 
           <FillingForm
-            fillings={this.state.fillings}
-            handleOnChange={this.handleChange}
+            fillings={ this.state.fillings }
+            handleChange={ this.handleChange }
           />
 
           <ToppingForm
-            toppings={this.state.toppings}
-            handleOnChange={this.handleChange}
+            toppings={ this.state.toppings }
+            handleChange={ this.handleChange }
           />
 
           <SideForm
-            sides={this.state.sides}
-            handleOnChange={this.handleChange}
+            sides={ this.state.sides }
+            handleChange={this.handleChange}
           />
 
           <br />

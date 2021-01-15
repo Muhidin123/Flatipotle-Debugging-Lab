@@ -27,4 +27,26 @@ Flatiron School has decided to dabble in the food industry and just opened up a 
 * How do we change state?
 * This app uses Semantic for styling - you will not need to worry about any errors here.
 
+<<<<<<< HEAD
 <p class='util--hide'>View <a href='https://learn.co/lessons/Flatipotle-Debugging-Lab'>Flatipotle Debugging Lab</a> on Learn.co and start learning to code for free.</p>
+=======
+## Errors
+1. **App.js**:
+  * Did not return Order component when mapping through `this.state.orders`
+  * Did not pass down addOrder() to Form component
+  * State is set with `:` instead of `=`
+  * Form and Order components imported from incorrect path
+2. **Form.js**:
+  * handleSubmit() and handleChange() should either be arrow functions or bind `this`
+  * `event` argument not passed into handleSubmit() and handleChange()
+  * handleChange() passed down as `handleOnChange` prop but used as `handleChange` in children components
+3. **FillingForm.js**:
+  * onChange should be `props.handleChange` instead of `this.props.handleChange`
+4. **ProteinForm.js**:
+  * Props not passed down into component
+5. **SideForm.js**:
+  * Did not export component
+6. **Order.js**:
+  * `handleClick` function does not use set state to change state
+  * Did not import Side component
+>>>>>>> 47b2b881987a5244020409775ba4f0a2523da0a0
